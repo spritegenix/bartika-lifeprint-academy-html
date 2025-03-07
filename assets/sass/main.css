@@ -10967,4 +10967,13 @@ body::after {
 }
 @media only screen and (max-width: 425px) {
   /*Small smartphones [325px -> 425px]*/
+  .logo img {
+    max-width: 150px;
+  }
+  .mobile-menu__logo img {
+    max-width: 150px;
+  }
+  .call-button {
+    display: none;
+  }
 }/*# sourceMappingURL=main.css.map */
