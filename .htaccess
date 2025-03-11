@@ -1,38 +1,34 @@
 <IfModule mod_rewrite.c>
-   RewriteEngine On
+    RewriteEngine On
+    RewriteBase /
 
-  RewriteBase / 
-    #about-us.html
+    # About Us
     RewriteRule ^about-us/$ about-us.html [L]
-    #blog\embracing-confidence-and-clarity.html
-    RewriteRule ^embracing-confidence-and-clarity/$ blog\embracing-confidence-and-clarity.html [L]
-    #blog\embracing-confidence-and-inner-strength.html
-    RewriteRule ^embracing-confidence-and-inner-strength/$ blog\embracing-confidence-and-inner-strength.html [L]
-    #blog\self-mastery-guide.html
-    RewriteRule ^self-mastery-guide/$ blog\self-mastery-guide.html [L]
-    #blog\unlocking-inner-strength.html
-    RewriteRule ^unlocking-inner-strength/$ blog\unlocking-inner-strength.html [L]
-    #blog\unlocking-your-true-potential.html
-    RewriteRule ^unlocking-your-true-potential/$ blog\unlocking-your-true-potential.html [L]
-    #blog.html
+
+    # Blog Pages
+    RewriteRule ^embracing-confidence-and-clarity/$ blog/embracing-confidence-and-clarity.html [L]
+    RewriteRule ^embracing-confidence-and-inner-strength/$ blog/embracing-confidence-and-inner-strength.html [L]
+    RewriteRule ^self-mastery-guide/$ blog/self-mastery-guide.html [L]
+    RewriteRule ^unlocking-inner-strength/$ blog/unlocking-inner-strength.html [L]
+    RewriteRule ^unlocking-your-true-potential/$ blog/unlocking-your-true-potential.html [L]
+
+    # Blog Listing Page
     RewriteRule ^blog/$ blog.html [L]
-    #contact-us.html
+
+    # Contact Us
     RewriteRule ^contact-us/$ contact-us.html [L]
-    #courses\find-your-spark-level-1.html
-    RewriteRule ^find-your-spark-level-1/$ courses\find-your-spark-level-1.html [L]
-    #courses\fire-the-flame-level-4.html
-    RewriteRule ^fire-the-flame-level-4/$ courses\fire-the-flame-level-4.html [L]
-    #courses\shine-your-light-level-2.html
-    RewriteRule ^shine-your-light-level-2/$ courses\shine-your-light-level-2.html [L]
-    #courses\taper-to-torch-level-3.html
-    RewriteRule ^taper-to-torch-level-3/$ courses\taper-to-torch-level-3.html [L]
-    #courses.html
+
+    # Courses
+    RewriteRule ^find-your-spark-level-1/$ courses/find-your-spark-level-1.html [L]
+    RewriteRule ^fire-the-flame-level-4/$ courses/fire-the-flame-level-4.html [L]
+    RewriteRule ^shine-your-light-level-2/$ courses/shine-your-light-level-2.html [L]
+    RewriteRule ^taper-to-torch-level-3/$ courses/taper-to-torch-level-3.html [L]
+
+    # Courses Listing Page
     RewriteRule ^courses/$ courses.html [L]
-    #index.html
-    RewriteRule ^index/$ index.html [L]
-    RewriteCond %{REQUEST_FILENAME} !-f 
 
-  RewriteCond %{REQUEST_FILENAME} !-d 
-
-  RewriteRule ^(.*)$ /404/404.html [L] 
+    # Handle Non-existing Files/Folders (404 Page)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /404.html [L]
 </IfModule>
