@@ -2,13 +2,6 @@
     RewriteEngine On
     RewriteBase /
 
-    # Debugging - Log Rewrites
-    RewriteLog "/var/log/apache2/rewrite.log"
-    RewriteLogLevel 3
-
-    # Force index.html to load for root requests
-    DirectoryIndex index.html
-
     # About Us
     RewriteRule ^about-us/?$ about-us.html [L]
 
@@ -16,20 +9,20 @@
     RewriteRule ^contact-us/?$ contact-us.html [L]
 
     # Blog Pages
-    RewriteRule ^embracing-confidence-and-clarity/?$ blog/embracing-confidence-and-clarity.html [L]
-    RewriteRule ^embracing-confidence-and-inner-strength/?$ blog/embracing-confidence-and-inner-strength.html [L]
-    RewriteRule ^self-mastery-guide/?$ blog/self-mastery-guide.html [L]
-    RewriteRule ^unlocking-inner-strength/?$ blog/unlocking-inner-strength.html [L]
-    RewriteRule ^unlocking-your-true-potential/?$ blog/unlocking-your-true-potential.html [L]
-
+    RewriteRule ^blog/embracing-confidence-and-clarity/?$ blog/embracing-confidence-and-clarity.html [L]
+    RewriteRule ^blog/embracing-confidence-and-inner-strength/?$ blog/embracing-confidence-and-inner-strength.html [L]
+    RewriteRule ^blog/self-mastery-guide/?$ blog/self-mastery-guide.html [L]
+    RewriteRule ^blog/unlocking-inner-strength/?$ blog/unlocking-inner-strength.html [L]
+    RewriteRule ^blog/unlocking-your-true-potential/?$ blog/unlocking-your-true-potential.html [L]
+    
     # Blog Listing Page
     RewriteRule ^blog/?$ blog.html [L]
 
     # Courses
-    RewriteRule ^find-your-spark-level-1/?$ courses/find-your-spark-level-1.html [L]
-    RewriteRule ^fire-the-flame-level-4/?$ courses/fire-the-flame-level-4.html [L]
-    RewriteRule ^shine-your-light-level-2/?$ courses/shine-your-light-level-2.html [L]
-    RewriteRule ^taper-to-torch-level-3/?$ courses/taper-to-torch-level-3.html [L]
+    RewriteRule ^courses/find-your-spark-level-1/?$ courses/find-your-spark-level-1.html [L]
+    RewriteRule ^courses/fire-the-flame-level-4/?$ courses/fire-the-flame-level-4.html [L]
+    RewriteRule ^courses/shine-your-light-level-2/?$ courses/shine-your-light-level-2.html [L]
+    RewriteRule ^courses/taper-to-torch-level-3/?$ courses/taper-to-torch-level-3.html [L]
 
     # Courses Listing Page
     RewriteRule ^courses/?$ courses.html [L]
