@@ -12,7 +12,11 @@ RewriteRule ^(.*)$ $1.html [L]
 # Handle Next.js SPA fallback for 404s to `404.html`
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^.*$ /404.html [L]
+RewriteRule ^(.*)$ /404.html [L]
+
+# Handle dynamic routes like /blog/[slug] and /courses/[slug]
+RewriteRule ^blog/(.*)$ /blog/$1.html [L]
+RewriteRule ^courses/(.*)$ /courses/$1.html [L]
 
 # Cache policy for static files
 <IfModule mod_expires.c>
